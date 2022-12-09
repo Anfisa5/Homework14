@@ -24,18 +24,15 @@ public class RepositoryTest {
 
     }
 
+
     @Test
     //тест на удаление товара по ID (удаление несуществующего в списке id)
-    public void testRemoveNotId() {
+    public void testRemoveNotId2() {
         Repository repo = new Repository();
 
-        Book book1 = new Book(1, "Книга1", 100, "Автор1");
-        Book book2 = new Book(3, "Книга2", 50, "Автор2");
-        Book book3 = new Book(5, "Книга3", 10, "Автор3");
-
-        repo.add(book1);
-        repo.add(book2);
-        repo.add(book3);
+        repo.add(product1);
+        repo.add(product2);
+        repo.add(product3);
 
         Assertions.assertThrows(NotFoundException.class,
                 () -> repo.removeById(8));
